@@ -49,7 +49,7 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for confirming email. Now login to your account')
     else:
         return HttpResponse('Activation link is invalid')
-def profile(request, username):
+def prof(request, username):
     profile = User.objects.get(username=username)
     
     try:
