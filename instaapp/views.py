@@ -14,7 +14,7 @@ from .forms import SignupForm,ImageForm,ProfileForm,CommentForm
 
 @login_required(login_url='/')
 def home(request):
-    images = Image.get_all_()
+    images = Image.get_all_images()
     
     return render(request, 'index.html', {'images':images})
 
