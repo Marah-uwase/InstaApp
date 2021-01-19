@@ -100,7 +100,7 @@ def upload_image(request):
     
     return render(request, 'profile/upload_image.html', {'form':form})
 @login_required(login_url='/accounts/login')
-def edit_profile(request):
+def _profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
