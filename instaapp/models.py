@@ -60,7 +60,7 @@ class Profile(models.Model):
         profile = Profile.objects.filter(user = id).first()
         return profile    
 
-class Comments(models.Model):
+class Comments(models.Model)
     comment = HTMLField()
     posted_on = models.DateTimeField(auto_now=True)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
