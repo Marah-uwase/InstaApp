@@ -86,7 +86,7 @@ def user_profile(request, username):
 
 
 @login_required(login_url='/accounts/login')
-def upload_image(request):
+def upload_(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
