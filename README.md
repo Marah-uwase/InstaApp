@@ -11,8 +11,6 @@ This is a simple web clone of the instagram website. A user can create an accoun
 2. Python3.7
 3. Postgres
 4. virtualenv
-#### Clone the repository
-Run the following command on the terminal: git clone https://github.com/Adelice/Insta.git
 ### Create the database
 psql
 CREATE DATABASE igram;
