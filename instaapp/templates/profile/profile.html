@@ -1,0 +1,82 @@
+{% extends 'all-insta/base.html' %}
+
+{% block content %}
+{{ form.media }}
+<div class="container top">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row top-section">
+                <div class="col-md-5 profile-image">
+                    {% if profile_details.prof_pic %}
+                    <img src="{{profile_details.prof_pic.url}}" width="300" height="300" alt="profile-photo" style="border-radius:50%;">
+                    {% else %}
+                    <img src="/static/img/avatah.png" alt="avatar">
+                    {% endif %}
+                </div>
+                <div class="col-md-5 text-center" style="font-family: 'Germania One', cursive;font-size:20px">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span class="username" style="text-transform: capitalize">{{ profile.username}}</span> 
+                        </li>
+                        {% if profile.username == user.username %}
+                    <p class="font3">{{profile_details.bio|safe}}</p>
+                    <p><a href="{% url 'upload_image' %}">Add Image</a></p>
+                    {% endif %}
+                        {% if profile.username == user.username %}
+                        <li class="list-inline-item">
+                            <a class="btn btn-edit" href="{% url 'edit_profile' %}">Edit Profile</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a data-toggle="modal" data-target="#settings"><i class="fa fa-cog fa-2x"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-primary">Follow</a>
+                        </li>
+                       
+
+                        {% endif %}
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">{{images|length}} </span> Posts
+                        </li>
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">0 </span> Followers
+                        </li>
+                        <li class="list-inline-item">
+                            <span class="font-weight-bold">0 </span> Following
+                        </li>
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row user-images">
+        {% for img in images %}
+        <div class="col-md-4 images" >
+            <img src="{{img.image.url}}" alt="Image" width="300" height="300" style=margin-top:50px>
+        </div>
+        {% empty %}
+        <div class="col-md-12">
+            <h2>Upload images</h2>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body"><ul class="list-group">
+            <li class="list-group-item text-center"><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+            <li class="list-group-item text-center"><a href="/logout/">Log Out</a></li>
+            <li class="list-group-item text-center"><a data-dismiss="modal">Cancel</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
