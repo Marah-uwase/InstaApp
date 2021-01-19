@@ -152,7 +152,7 @@ def unfollow(request, unfollowing):
 
 
 @login_required(login_url='login')
-def follow(request, following):
+def follo(request, following):
     if request.method == 'GET':
         user_profs = Profile.objects.get(pk=following)
         follower = Follow(follower=request.user.profile, followed=user_profs)
