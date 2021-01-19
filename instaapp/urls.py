@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^accounts/edit/',views.edit_profile, name='edit_profile'),
     url(r'^image/(?P<image_id>\d+)', views.single_image, name='single_image'),
     url('search/', views.search_profiles, name='search'),
-    url('unfollow/<unfollowing>', views.unfollow, name='unfollow'),
+    url('unfollow/<unfollowing>', views.unfollow, name='unfollow')
     url('follow/<following>', views.follow, name='follow'),
 ]
 if settings.DEBUG:
