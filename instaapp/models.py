@@ -36,7 +36,7 @@ class Image(models.Model):
         images = Image.objects.all()
         return images
 
-class Profile(models.Model)
+class Profile(models.Model):
     
     prof_pic = models.ImageField(upload_to = 'profile_pictures/')
     bio = HTMLField()
