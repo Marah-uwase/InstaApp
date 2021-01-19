@@ -113,7 +113,7 @@ def edit_profile(request):
 
     return render(request, 'profile/edit_profile.html', {'form':form})    
 @login_required(login_url='/accounts/login')
-def single_image(request, image_id):
+def _image(request, image_id):
     image = Image.get_image_id(image_id)
     comments = Comments.get_comments_by_images(image_id)
 
