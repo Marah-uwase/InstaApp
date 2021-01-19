@@ -1,5 +1,4 @@
-    venv/
-    *.pyc
-    .env/
-
-    igram/
+virtual/
+*_pyc
+__pycache__
+.env
