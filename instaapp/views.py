@@ -45,7 +45,7 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
-        # return redirect('home')
+        return redirect('home')
         return HttpResponse('Thank you for confirming email. Now login to your account')
     else:
         return HttpResponse('Activation link is invalid')
