@@ -29,7 +29,7 @@ SECRET_KEY = '=$ysr2*c*gxkd7)-acb9u1%mcr(+9s+z@nrt4vj@w9f8&qn@8g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://linstagram.herokuapp.com/']
 
 
 # Application definition
